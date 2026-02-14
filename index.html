@@ -1,24 +1,77 @@
 <!DOCTYPE html>
-<html lang="ja">
- <head>
-   <style>
-     html {
-       overflow: hidden;
-     }
-     body {
-       margin: 0;
-     }
-     iframe {
-       height: calc(100vh + 50px);
-       width: 100vw;
-       top: -50px;
-       left: 0px;
-       position: absolute;
-       padding-bottom: 0px;
-     }
-   </style>
- </head>
- <body oncontextmenu="return false;">
-   <iframe src="https://quizexe.wixsite.com/ko-siki" oncontextmenu="returnfalse;" frameborder="0" style="border: none"></iframe>
- </body>
+<html>
+<head>
+    <title>Redirect Example</title>
+    <style>
+        body {
+            background-color: #233157;
+        }
+        #loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+        #loading div {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: #fff;
+            margin: 35px 5px;
+        }
+        #loading .bar1 {
+            animation: loading 1s linear infinite;
+        }
+        #loading .bar2 {
+            animation: loading 1s linear infinite .09s;
+        }
+        #loading .bar3 {
+            animation: loading 1s linear infinite .18s;
+        }
+        @keyframes loading {
+            0% {
+                transform: scale(1);
+            }
+            20% {
+                transform: scale(1, 2.5);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+        #loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <script>
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function redirect() {
+            if (isMobile()) {
+                window.location.href = "mente.html";
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+
+        document.getElementById("loading").style.display = "flex";
+        setTimeout(redirect, 5000);
+    </script>
+</body>
 </html>
