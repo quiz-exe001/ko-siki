@@ -1,0 +1,74 @@
+html{
+    font-size: 100%;
+    font-family: "Noto Serif JP", serif;
+}
+body{
+    margin: 0;
+}
+.logo {
+    width: auto;
+    padding: 35vh 50px 35vh 50px ;
+    text-align: center;
+    background-color: #ffafc6;
+}
+h1 {
+    font-weight: 600;
+    font-size: 5rem;
+    color: #22406e;
+    margin: 0;
+}
+h2 {
+    font-weight: 600;
+    font-size: 3rem;
+    color: #ffafc6;
+    margin: 5% 0;
+}
+h3 {
+    font-weight: 200;
+}
+a{
+    font-weight: 300;
+    font-size: 2rem;
+    color: #22406e;
+}
+.list {
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+.item {   
+    align-items: center;
+    padding: 20px;
+    height: calc( 100%/3 - 40px );
+    width: 100%;
+    font-size: 1rem;
+    justify-content: center;
+    transition: 0.5s all linear;
+    display: flex;
+    background-color: #ffafc6;
+    color: #1b3867;
+}
+
+p {
+    margin: 0;
+}
+.main {
+    text-align: center;
+    background-color: #1b3867;
+    color: aliceblue;
+    padding: 200px 50px;
+}
+
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
